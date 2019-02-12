@@ -13,14 +13,16 @@ export class HomeComponent{
 
     constructor(protected router: Router) {
       this.player = new Player();
-      this.player.id = 1;
-      this.player.choice = "";
+      this.player.id = 2;
+      this.player.choice = 0;
+      this.player.img_choice = '';
       this.player.score = 0;
       this.computer = new Player();
-      this.computer.id = 2;
-      this.computer.name = "computer";
-      this.computer.choice = "";
+      this.computer.id = 1;
+      this.computer.choice = 0;
+      this.player.img_choice = '';
       this.computer.score = 0;
+      this.computer.name = "computer";
     }
 
     create() {
@@ -29,7 +31,9 @@ export class HomeComponent{
       if (my_player.name && my_player.name.length != 0) {
           localStorage.setItem('currentPlayer', JSON.stringify(my_player));
           localStorage.setItem('computerPlayer', JSON.stringify(robot));
+
           this.router.navigate(['game']);
+          return;
       }
       console.log("please enter your name");
     }

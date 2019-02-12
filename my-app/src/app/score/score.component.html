@@ -1,16 +1,29 @@
 <div class="container">
     <div class="raw">
-        <div class="p-3 m-3">
-            <p>{{ player.name }} played {{ player.choice }} and the Computer played {{ computer.choice}} </p>
-            <p class="font-weight-bold"> {{ text }}</p>
-            <br>
-            <p class="font-weight-bold"> Score</p>
-            <ul class="m-3 list-unstyled">
-                <li>{{ player.name }} : {{ player.score }}</li>
-                <li>Computer : {{ computer.score }}</li>
-            </ul>
+        <div class="text-center text-white">
+            <div class="row justify-content-center">
+                <div class="col-3 text-center">
+                    <h1>You</h1>
+                    <img src={{player.img_choice}} alt="player choice" width="100">
+                </div>
+                <h1 id="outcome" class="col-3"> {{ text }}</h1>
+                <div class="col-3 text-center">
+                    <h1>Computer</h1>
+                    <img src={{computer.img_choice}} alt="computer choice" width="100">
+                </div>
+            </div>
 
-            <a href="game" class="btn btn-secondary btn-lg">Play Again</a>
+
+
+            <div id="score" class="text-center">
+                <p class="font-weight-bold"> Score</p>
+                <ul class="m-3 list-unstyled text-danger">
+                    <li>{{ player.name }} : {{ player.score }}</li>
+                    <li>Computer : {{ computer.score }}</li>
+                </ul>
+            </div>
+
+            <a href="game" class="text-center btn btn-danger btn-lg">Play Again</a>
         </div>
     </div>
 </div>

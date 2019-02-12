@@ -1,8 +1,8 @@
 <div class="container">
     <div class="raw">
-        <div class="p-3 m-3">
+        <div class="text-center" *ngIf="notPlayYet; else alreadyPlayed">
             <h1>Remember</h1>
-            <ul class="m-3 list-unstyled">
+            <ul class="list-unstyled text-danger">
                 <li>Rock crushes Scissors</li>
                 <li>Scissors cuts Paper</li>
                 <li>Paper covers Rock</li>
@@ -10,10 +10,13 @@
 
             <h1>Choose wisely</h1>
 
-            <button type="button" name="Rock" class="m-3 btn btn-outline-secondary btn-lg" (click)="chifoumi('Rock')"><img src="assets/imgs/hand-rock.png" alt="Rock" width="100"></button>
-            <button type="button" name="Scissors" class="m-3 btn btn-outline-secondary btn-lg" (click)="chifoumi('Scissors')"><img src="assets/imgs/hand-scissors.png" alt="Scissors" width="100"></button>
-            <button type="button" name="Paper" class="m-3 btn btn-outline-secondary btn-lg" (click)="chifoumi('Paper')"><img src="assets/imgs/hand-paper.png" alt="Paper" width="100"></button>
+            <button type="button" name="Rock" class="m-3 btn btn-outline-danger btn-lg" (click)="chifoumi(1)"><img src="assets/imgs/hand-rock.png" alt="rock" width="100"></button>
+            <button type="button" name="Scissors" class="m-3 btn btn-outline-danger btn-lg" (click)="chifoumi(2)"><img src="assets/imgs/hand-scissors.png" alt="Scissors" width="100"></button>
+            <button type="button" name="Paper" class="m-3 btn btn-outline-danger btn-lg" (click)="chifoumi(3)"><img src="assets/imgs/hand-paper.png" alt="Paper" width="100"></button>
 
         </div>
+        <ng-template #alreadyPlayed>
+            <app-score></app-score>
+        </ng-template>
     </div>
 </div>
